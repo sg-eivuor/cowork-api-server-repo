@@ -9,6 +9,10 @@ const { Member } = db;
 //middleware -> POST의 body 정보를 담기 위한 장치
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('URL should contain /api/..');
+});
+
 // 쿼리로 받은 것으로 특정 부서 검색
 app.get('/api/members', async (req, res) => {
     const { team } = req.query;
